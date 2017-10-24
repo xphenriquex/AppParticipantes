@@ -81,4 +81,10 @@ public class ParticipanteDao extends SQLiteOpenHelper {
 
         return lista;
     }
+
+
+    public void deletar(Participante participante){
+        String[] argumentos =  {participante.getId().toString()};
+        getWritableDatabase().delete(TABELA, "id=?", argumentos);
+    }
 }
